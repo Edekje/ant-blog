@@ -1,0 +1,257 @@
+	/* Styling for Website header/footer */
+
+header, footer  {
+  width: 800px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+footer p {
+  font-size: 0.75em;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+/* ------ Banner Styling */
+
+.BannerLogo {
+  background-color: white;
+  border-radius: 10pt;
+  height: 80pt;
+/*  line-height: 80pt;*/
+  width: 700px;
+  margin: 10px auto;
+  /*margin-bottom: 20px;*/
+  border-style: solid;
+  border-width: 2pt;
+  
+  display: grid;
+  grid-template-columns: 500px 200px;
+  grid-template-rows: 80pt;
+}
+
+/* Left Hand-side of Banner */
+.BannerLogo .left {
+  grid-column: 1;
+  grid-row: 1;
+  font-family: monospace;
+}
+
+.BannerLogo h1, .BannerLogo h2 {
+  margin: 0;
+  color: black;
+}
+
+.BannerLogo h1 {
+  font-size: 32pt;
+  margin-top: 16pt;
+}
+
+.BannerLogo h2 {
+  font-size: 16pt;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+/* Right Hand-Side of Banner */
+
+.BannerLogo .right {
+  grid-column: 2;
+  grid-row: 1;
+
+}
+
+.BannerLogo img {
+  height: 80pt;
+  width: auto;
+  border-radius: 0 8pt 8pt 0;
+  float: right;
+  border-left: 2pt solid;
+  }
+
+/* ------ Navigation Bar styling */
+nav {
+  font-family: Cambria;
+  border-style: solid;	
+  border-radius: 5px;
+  padding: 5px 12px 5px 12px;
+  display: inline-block;
+  background-color: rgba(255,255,255,0.6);
+  margin-bottom: 0px;
+}
+
+nav a {
+  color: blue;
+}
+
+/* General Body Styling */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color : rgb(172, 195, 211);
+  font-family: Merriweather;
+}
+
+body p {
+  line-height: 1.4em;
+}
+
+.PageCenter {
+  padding: 5px 0;
+  background-color: white;
+  width: 850px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.PageBody {
+  margin: 0 auto;
+  margin-bottom: 1em;
+  width: 800px;
+  overflow: hidden;
+}
+
+h1, h2, h3 {
+  font-family: Helvetica, Arial, sans-serif;
+  color: black;
+  opacity: 0.85;
+}
+
+h1 {
+  margin: 0.8em 5px;
+}
+
+h2 {
+  margin: 0.6em 5px;
+}
+
+h3 {
+  margin: 0.4em 5px;
+}
+
+p {
+  margin: 0.4em 0;
+}
+
+.PageBody ul {
+  margin: 1em 1.2em;
+}
+
+/* Blog Settings */
+
+article {
+  width: 520px;
+}
+
+article p {
+  text-align: justify;
+}
+
+.BlogBar {
+  padding: 8px 2px 8px 8px;
+  margin: 10px;
+  box-shadow: 8px 8px;
+  width: 250px;
+  float: right;
+  border: 2px outset;
+  border-radius: 4px;
+  
+  background-color: #d3c3ac;
+}
+
+.BlogBar ul {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+}
+
+.BlogBar a{
+  color: blue;
+}
+
+/* Post header settings */
+
+.PostHeader  h1 {
+  font-size: 1.5em;
+  margin-left: 0;
+  opacity: 1;
+}
+
+.PostHeader  h2 {
+  font-size: 1.2em;
+  font-style: italic;
+  opacity: 0.85;
+  margin-left: 0;
+}
+
+.ArticleInfo {
+  font-size: 0.75em;
+  font-weight: bold;
+  font-style: italic;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+
+/* NextPrev buttons settings */
+.NextPrevPost {
+  padding-bottom: 40px;
+  padding-top: 30px;
+}
+
+.NextPrevPost  a {
+  text-decoration: none;
+}
+
+.PrevPost {
+  float: left;
+}
+
+.NextPost {
+  float: right;
+}
+
+/* Article Figure Settings */
+
+article figure {
+  text-align: center;
+  font-size: 0.75em;
+  font-weight: bold;
+  padding: 20px;
+}
+
+article img {
+  padding: 10px;
+}
+
+article figcaption {
+  text-align: center;
+  max-width: 80%;
+  margin: 10px auto;
+}
+
+/* Comments styling */
+.Comment {
+  padding: 4px 4px 4px 4px;
+  width: 520px;
+  /*float: right;*/
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  background-color: #e5dccd;
+}	
+
+.CommentAuthor {
+  font-weight: bold;
+}
+
+.CommentDateTime {
+  font-style: italic;
+}
+
+.CommentTitle {
+  border-bottom: 1px solid black;
+}

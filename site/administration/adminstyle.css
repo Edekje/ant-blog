@@ -1,0 +1,6 @@
+/* Special additional styling for Admin Pages */
+
+/* Prevent links from changing colour on click */
+.AdminPageLinks a, .AdminCommentViews a, .AdminComments a , .AdminReturnLink{
+	color : blue;
+}

@@ -1,0 +1,6 @@
+# This folder contains SQL database logins
+# Ignore all files
+*
+# Except for these two
+!.gitignore
+!blogdb_user.php

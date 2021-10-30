@@ -1,0 +1,6 @@
+# Ignore all files
+*
+# Except for these 3
+!.gitignore
+!rss-icon.png
+!ant.jpg

@@ -1,0 +1,12 @@
+FILENAME (FREQUENCY)
+# DESCRIPTION
+
+Note: user needs to configure these manually.
+
+captchacleanup.php (Hourly)
+# Deletes all form_captchas in database
+# older than 3 hours.
+
+commentcleanup.php (Daily)
+# Deletes all unconfirmed comments & corresponding uuids
+# in database older than 7 days.
