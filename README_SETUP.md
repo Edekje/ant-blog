@@ -17,7 +17,7 @@ php_value include_path ".:/thepathto/hiddenfiles/"
 
 ### Configure the cronjobs as specified in `hiddenfiles/cronjobs/cronjobs_overview.txt`
 
-### Configure appropriate `administratie/.htaccess` and `administratie/.htpasswd` files for the Administration pages
+### Configure appropriate `administration/.htaccess` and `administration/.htpasswd` files for the Administration pages
 The Administration / CMS pages need password protection from the public. Ideally, configure your .htaccess file so that the CMS area of the website is additionally only available from your home country using GeoIP.
 
 ### Configure `hiddenfiles/website_configuration.php` with your website-specific details.
