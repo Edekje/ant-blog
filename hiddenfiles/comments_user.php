@@ -1,7 +1,7 @@
 <?php
 /* Database login with read-write permissions,
  * giving $host, $dbname, $username, $password variables. */
-include 'sql_users/blogdb_user.php';
+require 'sql_users/blogdb_user.php';
 
 function write_comment(string $email, string $name, string $text, int $form_id, int $captcha_code) {
  	/* This function receives the email, name and commen text from a comment form.
@@ -74,9 +74,11 @@ function write_comment(string $email, string $name, string $text, int $form_id, 
 	/* Now we assume success */
 	$CommentUUID = $SQLResult['UUID']; // doesn't work for UUID
 	
-	/* Needs work to send verication email*/
-	$Confirmation_Link = 'https://ethanvanwoerkom.com/sandbox/site/blog/confirm_comment.php?uuid='.$CommentUUID;
+	// For some reason $wc_website_url is null if required outside body!
+	require 'website_configuration.php';
+	$Confirmation_Link = $wc_website_url.'blog/confirm_comment.php?uuid='.$CommentUUID;
 	$mail_status = send_verification_mail($email, $Confirmation_Link, $name);
+	
 	/* Success */
 	if($mail_status) {
 		return 'Comment made successfully; please confirm the validation e-mail sent to you within 7 days.';
