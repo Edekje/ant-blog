@@ -1,38 +1,35 @@
 # AntBlog
 ## Personal Website README
-This project implements a website and blog CMS engine. It is an open sourced version of the one used to run my own personal website. It consists of a templating engine, complete blog, and administration CMS system.
+This project implements a website and blog CMS engine. It is an open sourced version of the one used to run [my own personal website](www.ethanvanwoerkom.com). It consists of a templating engine, fully functional blog engine with comments, and an accompanying administration CMS.
 
 AntBlog is exclusively written in PHP, HTML and CSS and uses no external frameworks for maximum speed.
 
-The website engine should:
+The website engine is intended to be:
 - Be fast.
 - Use absolutely no external plugins or code.
 - Not place any cookies.
-- Work with PHP 7.4.
+- Work with PHP 8.
 
 ## Implemented Features
+- Templating engine with dynamic navigation bar.
+- Comments section.
+- Comment user e-mail confirmation system.
+- Comment CMS approval system.
+- Comment captcha
+- Administration including: Posts Overview, Editing, File Uploadi & overvoew, Comment overview.
 - Fancy deployment script that:
 	- Tells you whether the server contains any superfluous files.
 	- Tells you whether any server files differ.
 	- Tells you whether the server is missing any files.
-- Comment mail confirmation system (Works, needs extensive testing)
-- Comment CMS approval system (Works, may need more tesing)
-- Comments section (Present, needs styling)
-- Appropriate comment captcha
-- Captchas are deleted every 3 hours (test this).
-- Automatic email confirmation deletion from database after 7 days. (test this)
-- Captcha seed now saved at form generation time for consistencty. Seems good. Does it need more thorough testing?
-- Blog Homepage now redirects to most recent post.
 
-## Features in Progress
+## Features in progress:
+- Way to safely describe SQL DB in this repo.
 
 ## Desired Features
-- Fancy deployment script that:
-	- Can replace/add any differing/lacking files, on the server, or local.
 - CMS statistics page, tracking ip-adresses.
-- Way to safely describe DB in this repo.
+- Download site backup in tarball.
 
-## Bugs / Outstanding
-- Good website styling
-- Make website content.
-- Merging index.php and post.php.
+##  Outstanding
+- Configuration script.
+- Duplicated testing environment.
+- Refactoring
