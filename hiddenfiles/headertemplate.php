@@ -41,7 +41,7 @@
 echo '<b id="menubar">';
 foreach($wc_headertemplate_navigationpages as $key => $pagename){
 	if( ! str_starts_with($title, $pagename) ){
-		echo '<a id="pagelink" href="/sandbox/site/'.$wc_headertemplate_navigationlinks[$key].'">'.$pagename.'</a>';
+		echo '<a id="pagelink" href="'.$wc_website_url.$wc_headertemplate_navigationlinks[$key].'">'.$pagename.'</a>';
 	}
 	else {
 		echo $pagename;
