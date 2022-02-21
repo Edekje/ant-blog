@@ -54,20 +54,24 @@ try{
 <h2>Edit Post</h2>
 
 <?php if($Post) { /* Case that a PostTag/PostNumber to display has been supplied. */ ?>
-<form method="Post">
+<form method="Post" class="EditPostForm">
 	<input type="hidden" name="EditPostTag" value="<?php echo htmlspecialchars($PostTag) ?>">
 	<input type="hidden" name="EditPostNumber" value="<?php echo htmlspecialchars($PostNumber) ?>">
 	<?php
 	foreach ($Elements as $Element) { if ($Element !== 'Body') {?>
+	<p>
 	<label for="<?php echo htmlspecialchars($Element) ?>"><?php echo htmlspecialchars($Element) ?>: </label>
 	<input type="text" name="<?php echo htmlspecialchars($Element) ?>" value="<?php echo htmlspecialchars($Post[$Element]) ?>">
-	<input type="checkbox" name="<?php echo htmlspecialchars($Element) ?>Box"> <br>
+	<input type="checkbox" name="<?php echo htmlspecialchars($Element) ?>Box">
+	</p>
 	<?php } else { ?>
+	<p>
 	<label for="Body" style="vertical-align: top;">Body: </label>
-	<textarea name="Body" style="padding: 5px 5px; width: 700px; height: 300px;"><?php echo htmlspecialchars($Post['Body']) ?></textarea>
+	<textarea name="Body" style="padding: 5px 5px; width: 660px; height: 300px;"><?php echo htmlspecialchars($Post['Body']) ?></textarea>
 	<input type="checkbox" name="BodyBox"> <br>
 	<?php } } ?>
 	<input type="submit" value="Submit Edit" name="SubmitEdit">
+	</p>
 </form>
 <?php } else { /* Case that we need to request a PostTag or PostNumber */ ?>
 <p>Please enter a Post Tag or Post Number to edit:</p>

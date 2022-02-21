@@ -26,13 +26,20 @@ require 'comments_user.php';
  * Therefore this means that whenever $msg is not set, a $post has been successfully retrieved!
  * The full output either $post or $msg has therefore been given.
  */
-try{
+ 
+if( isset($Preview) and $Preview) {
+	$Public = False; // Here we are in the administrator 'preview.php' mode
+} else {
+	$Public = True; // Standard visitor mode.
+}
+
+try {
 	if( isset($_GET['n']) ) {
 			$PostTag = $_GET['n'];
 			if (preg_match('/[^A-Za-z0-9-]/', $PostTag)) { // '/[^a-z\d]/i' should also work.
 				throw new Exception('PostTag contains characters other than alphanumeric and hyphen.'); // string contains only english letters & digits
 			}
-			$post = get_post_str( $PostTag );
+			$post = get_post_str( $PostTag, $Public);
 			/* Get Next Prev Post information */
 			$NextPrev = get_next_prev($post['PostNumber']);
 	}
@@ -41,7 +48,7 @@ try{
 			if($postnum <= 0){
 				throw new Exception("Postnumber $postnum invalid.");
 			}
-			$post = get_post_int( $postnum );
+			$post = get_post_int( $postnum, $Public);
 			/* Get Next and Prev Post information */
 			$NextPrev = get_next_prev($post['PostNumber']);
 	}
@@ -51,9 +58,9 @@ try{
 }
 catch(Throwable $t){
 	# Only for Developer use:
-	# $msg = $t->getMessage();  #$msg becomes the exception message.
+	 $msg = $t->getMessage();  #$msg becomes the exception message.
 	# For Public use:
-	$msg = 'Post not found. View all posts <a href="posts.php">HERE</a>.';
+	#$msg = 'Post not found. View all posts <a href="posts.php">HERE</a>.';
 }
 
 /* ---- IF SUCCESSFULL SET TITLE TO 'Blog-'$post['Title']+' EthanvanWoerkom.com' ELSE TO 'Blog' ---- */
@@ -73,7 +80,6 @@ else {
 require 'headertemplate.php';
 
 print_blog_sidebar();
-echo '<h1>Blog Post:</h1>';
 
 /* ---- PRINT EITHER $post (SUCCESSFULL) OR $msg (UNSUCCESSFULL)---- */
 if( !isset($msg) ) { /* SUCCESFULL CASE */ ?>

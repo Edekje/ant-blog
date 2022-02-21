@@ -4,3 +4,9 @@
 .AdminPageLinks a, .AdminCommentViews a, .AdminComments a , .AdminReturnLink{
 	color : blue;
 }
+
+/* Align edit post form nicely (*/
+.EditPostForm  { display: table; }
+.EditPostForm p     { display: table-row; }
+.EditPostForm label { display: table-cell; }
+.EditPostForm input { display: table-cell; }

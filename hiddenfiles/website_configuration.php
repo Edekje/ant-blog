@@ -20,14 +20,14 @@ $wc_website_mainstylesheet = $wc_website_url.'styles/mainstyle.css';
 // Website stylesheet to include fonts:
 $wc_headertemplate_fontsstylesheet = 'https://fonts.googleapis.com/css2?family=Merriweather&display=swap';
 // Pages in the navigation bar:
-$wc_headertemplate_navigationpages = array('Home', 'Blog', 'Shared Work', 'Portfolio', 'Contact');
+$wc_headertemplate_navigationpages = array('Home', 'Blog', 'Shared Work', 'CV', 'Contact');
 // Links corresponding to the pages in the navigation bar:
-$wc_headertemplate_navigationlinks = array('index.php', 'blog/', 'work.php', 'portfolio.php', 'contact.php');
+$wc_headertemplate_navigationlinks = array('index.php', 'blog/', 'work.php', 'cv.php', 'contact.php');
 
 /* rss.php */
 $wc_rss_title = 'Ant Blog';
 $wc_rss_description = 'Blog detailing the life of an ant';
 
 /* footertemplate.php */
-$wc_footertemplate_text = 'Copyright Ethan van Woerkom (2021)';
+$wc_footertemplate_text = 'Copyright Ethan van Woerkom ('.date("Y").')';
 

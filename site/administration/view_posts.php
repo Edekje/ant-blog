@@ -11,7 +11,6 @@ try {
 ?>
 
 <h2>View Posts</h2>
-
 <table>
 <tr>
 	<th>No.</th>
@@ -29,7 +28,7 @@ try {
 	<td><?php echo '<a href="preview.php?n='.$post['PostTag'].'">'.$post['PostTag'].'</a>' ?></td>
 	<td><?php echo $post['Title'] ?></td>
 	<td><?php echo $post['SubTitle'] ?></td>
-	<td><?php echo $post['Tags'] ?></td>
+	<td><?php echo str_replace(',', ', ', $post['Tags']) ?></td>
 	<td><?php echo $post['DateTime'] ?></td>
 	<td><?php echo $post['Views'] ?></td>
 	<td><?php echo ($post['Public']) ? 'True' : 'False' ?></td>

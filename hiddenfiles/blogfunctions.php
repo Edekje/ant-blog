@@ -125,7 +125,7 @@ function get_post_str(string $PostTag, bool $Public = True) {
 /* Gets the next and previous post to the current post $PostNumber. If $Public is True, only show public posts.
  * Returns an array with ['Next'] and ['Prev'] table rows.
  * Sorts by POSTNUMBER not Date.
- * Throws an exception if nothing is found.
+ * Does not throw an exception if nothing is found.
  * Gets Title, PostNumber, DateTime, PostTag. */
 function get_next_prev(int $PostNumber, bool $Public = True) {
 	global $host, $dbname, $username, $password;
@@ -144,7 +144,7 @@ function get_next_prev(int $PostNumber, bool $Public = True) {
 		$getnext_statement = $connection->prepare($NextPublicSQL);
 		$getprev_statement = $connection->prepare($PrevPublicSQL);
 	}
-	else { # In admin case, do not increment views and ignore public marker.
+	else { # In admin case, ignore public marker.
 		$getnext_statement = $connection->prepare($NextNonPublicSQL);
 		$getprev_statement = $connection->prepare($PrevNonPublicSQL);
 	}
@@ -168,11 +168,11 @@ function get_next_prev(int $PostNumber, bool $Public = True) {
 	if($prevresult) {
 		$result['Prev'] = $prevresult;
 	}
-	
+	/*
 	# If we have just have [] (=False), throw exception.
 	if(!$result) {
 		throw new Exception('Found Nothing');
-	}
+	}*/
 	
 	return $result;
 }

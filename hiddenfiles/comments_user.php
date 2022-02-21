@@ -150,7 +150,7 @@ function make_comment_form(int $PostNumber, $emailval = '', $nameval = '', $text
 	$Html .= '<label for="Name">Name:</label></br><input type="text" name="Name" value="'.$nameval.'"></br>';
 	$Html .= '<label for="E-mail">E-Mail:</label></br><input type="text" name="E-mail" value="'.$emailval.'"></br>';
 	$Html .= '<label for="CommentText">Comment:</label></br><textarea name="CommentText" style="padding: 5px 5px; width: 200px; height: 100px;">'.$textval.'</textarea></br>';
-	$Html .= '<label for="HumVer">Please copy to confirm you are human:</label></br>';
+	$Html .= '<label for="HumVer">Please copy number to confirm your humanity:</label></br>';
 	$Html .= '<img src="imageverify.php?id='.$form_id.'"></br>';
 	$Html .= '<input type="text" name="HumVer"></br>';
 	$Html .= '<input type="submit" value="Submit Comment">';
