@@ -18,6 +18,8 @@ if( isset($_POST['PostTag'], $_POST['PostNumber']) ) {
 
 <h2>Delete Post</h2>
 
+<p>Please enter both post tag and number to confirm your decision:
+
 <form method="Post">
 <label for="PostTag">Post Tag: </label> <input type="text" name="PostTag"> <br>
 <label for="PostNumber">Post Number: </label> <input type="text" name="PostNumber"> <br>
