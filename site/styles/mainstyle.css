@@ -71,7 +71,7 @@ footer p {
 
 /* ------ Navigation Bar styling */
 nav {
-  font-family: Cambria;
+  font-family: Cambria, serif;
   border-style: solid;	
   border-radius: 5px;
   padding: 5px 12px 5px 12px;
@@ -92,7 +92,7 @@ nav a {
 
 body {
   background-color : rgb(172, 195, 211);
-  font-family: Merriweather;
+  font-family: Merriweather, Cambria, serif;
 }
 
 body p {
@@ -150,16 +150,24 @@ article p {
   text-align: justify;
 }
 
+article > p:first-of-type::first-letter {
+  float: left;
+  font-size: 3em;
+  margin: 0 2pt 0;
+  padding: 0.1em 0 0 0;
+  line-height: 0.7;
+  width: 2em;
+}
+
 .BlogBar {
-  padding: 8px 2px 8px 8px;
+  padding: 2px 2px 8px 8px;
   margin: 10px;
   box-shadow: 8px 8px;
   width: 250px;
   float: right;
   border: 2px outset;
   border-radius: 4px;
-  
-  background-color: #d3c3ac;
+  background-color: rgb(211, 195, 172, 0.8);
 }
 
 .BlogBar ul {
@@ -234,6 +242,10 @@ article figcaption {
 }
 
 /* Comments styling */
+.Comments {
+  width: 520px;
+}
+
 .Comment {
   padding: 4px 4px 4px 4px;
   width: 520px;
