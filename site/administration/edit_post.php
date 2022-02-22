@@ -54,7 +54,7 @@ try{
 <h2>Edit Post</h2>
 
 <?php if($Post) { /* Case that a PostTag/PostNumber to display has been supplied. */ ?>
-<form method="Post" class="EditPostForm">
+<form method="Post" class="TidyForm">
 	<input type="hidden" name="EditPostTag" value="<?php echo htmlspecialchars($PostTag) ?>">
 	<input type="hidden" name="EditPostNumber" value="<?php echo htmlspecialchars($PostNumber) ?>">
 	<?php

@@ -1,7 +1,7 @@
 <?php
 require 'adminheadertemplate.php';
 
-function do_upload(string $Type, int $MaxSize) {
+function do_upload(string $Type, int $MaxSize, bool $Private=True) {
 	// MaxSize is max number of bytes, Type is either 'files', or 'images'
 	// Which determines the upload folder.
 	global $msg;
@@ -43,8 +43,12 @@ function do_upload(string $Type, int $MaxSize) {
 		throw new Exception();
 	}
 	// Execute upload
-	if ( move_uploaded_file($_FILES['Upload'.$Type]['tmp_name'], '../'.$Type.'/'.$NewFileName) ) {
-		$msg = "File uploaded successfully with name $NewFileName to the directory $Type!";
+	$dir = $Type;
+	if($Private and $Type=='files') {
+		$dir = 'administration/files';
+	}
+	if ( move_uploaded_file($_FILES['Upload'.$Type]['tmp_name'], '../'.$dir.'/'.$NewFileName) ) {
+		$msg = "File uploaded successfully with name $NewFileName to the directory $dir!";
 	} else {
 		$msg = 'File upload failed';
 	}
@@ -53,7 +57,9 @@ function do_upload(string $Type, int $MaxSize) {
 try {
 	$msg = ''; // Deposit error messages here.
 	if( isset($_POST['Submitfiles']) ) {
-		do_upload('files', 100 * 1024 * 1024); // Max File 100 MB
+		// Determine if destination is to /administration/files:
+		$Private = isset($_POST['Private']) and $_POST['Private'];
+		do_upload('files', 100 * 1024 * 1024, $Private); // Max File 100 MB
 	} elseif ( isset($_POST['Submitimages'] ) ) {
 		do_upload('images' , 10 * 1024 * 1024); // Max Image 10 MB
 	}
@@ -71,23 +77,35 @@ if(isset($msg)) {
 <h2>Upload</h2>
 
 <h3>Upload File</h3>
-<form action="" method="post" enctype="multipart/form-data">
-  <label for="Uploadfiles">Select File:</label>
-  <input type="file" name="Uploadfiles"> <br>
-  <label for="Namefiles">File Name:</label>
+<form action="" method="post" enctype="multipart/form-data" class="TidyForm">
+  <p>
+  <label for="Uploadfiles">Select File:&nbsp;</label>
+  <input type="file" name="Uploadfiles">
+  </p>
+  <p>
+  <label for="Namefiles">File Name:&nbsp;</label>
   <input type="text" name="Namefiles">
-  <input type="submit" value="Upload File" name="Submitfiles">
+  </p>
+  <p>
+  <label for="Private">Private:&nbsp;</label>
+  <input type="checkbox" name="Private"><label>(administration/files)</label>
+  </p>
+  <p><input type="submit" value="Upload File" name="Submitfiles"></p>
 </form>
 
 <br>
 
 <h3>Upload Image</h3>
-<form action="" method="post" enctype="multipart/form-data">
-  <label for="Uploadimages">Select Image:</label>
-  <input type="file" name="Uploadimages"> <br>
-  <label for="Nameimages">File Name:</label>
+<form action="" method="post" enctype="multipart/form-data" class="TidyForm">
+  <p>
+  <label for="Uploadimages">Select Image:&nbsp;</label>
+  <input type="file" name="Uploadimages">
+  </p>
+  <p>
+  <label for="Nameimages">File Name:&nbsp;</label>
   <input type="text" name="Nameimages">
-  <input type="submit" value="Upload Image" name="Submitimages">
+  </p>
+  <p><input type="submit" value="Upload Image" name="Submitimages"></p>
 </form>
 
 <?php require 'adminfootertemplate.php'?>

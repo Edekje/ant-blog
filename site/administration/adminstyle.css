@@ -6,7 +6,7 @@
 }
 
 /* Align edit post form nicely (*/
-.EditPostForm  { display: table; }
-.EditPostForm p     { display: table-row; }
-.EditPostForm label { display: table-cell; }
-.EditPostForm input { display: table-cell; }
+.TidyForm  { display: table; }
+.TidyForm p     { display: table-row; }
+.TidyForm label { display: table-cell; }
+.TidyForm input { display: table-cell; }

@@ -1,21 +1,13 @@
 #!/bin/bash
 
-# Location of HTTP server website directory,
-# must be explicitly saved in the server-directory.loc file.
-# should be of form myaccount@server.com:domains/mysitelocation/
-SERVER=`cat server-directory.loc`
-
-# Relative locations of server and local directories:
-SERVER_site="${SERVER}public_html/sandbox/site"
-SERVER_hiddenfiles="${SERVER}hiddenfiles"
-LOCAL_site="../site"
-LOCAL_hiddenfiles="../hiddenfiles"
+# Source (relative) directory locations on server:
+source server-directory.loc
 
 echo -e "Comparing the 'site' directory:"
 echo "Files in local, not present on remote (excluding .gitignore):"
 rsync -rin --ignore-existing --exclude '.gitignore'  $LOCAL_site/ $SERVER_site/
 echo "Files in remote, not present on local:"
-rsync -rin --ignore-existing --exclude /images/ --exclude /files/ $SERVER_site/ $LOCAL_site/
+rsync -rin --ignore-existing --exclude /images/ --exclude /files/ --exclude /sandbox/ --exclude /administration/files/ --exclude /cgi-bin/ $SERVER_site/ $LOCAL_site/
 echo "Files in local and remote, which differ:"
 rsync -rinc --existing $SERVER_site/ $LOCAL_site/
 
