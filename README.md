@@ -17,6 +17,7 @@ The website engine is intended to be:
 - Comment CMS approval system.
 - Comment captcha
 - Administration including: Posts Overview, Editing, File Uploadi & overvoew, Comment overview.
+- Private note-taking system & file storage.
 - Fancy deployment script that:
 	- Tells you whether the server contains any superfluous files.
 	- Tells you whether any server files differ.
