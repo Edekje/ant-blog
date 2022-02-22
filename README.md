@@ -1,5 +1,4 @@
-# AntBlog
-## Personal Website README
+# AntBlog README
 This project implements a website and blog CMS engine. It is an open sourced version of the one used to run [my own personal website](www.ethanvanwoerkom.com). It consists of a templating engine, fully functional blog engine with comments, and an accompanying administration CMS.
 
 AntBlog is exclusively written in PHP, SQL, HTML and CSS and uses no external frameworks for maximum speed.
