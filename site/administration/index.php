@@ -20,6 +20,7 @@ try {
  <li><a href="view_comments.php">View Comments (<?php echo $WaitingCom?> Waiting, <?php echo $TotalCom?> Public)</a></li>
  <li><a href="upload.php">Upload</a></li>
  <li><a href="view_files.php">File Overview</a></li>
+ <li><a href="view_notes.php">Notes</a></li>
 </ul>
 
 <?php $disableadminreturnlink = true; require 'adminfootertemplate.php'?>

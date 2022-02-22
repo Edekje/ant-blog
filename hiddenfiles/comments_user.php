@@ -75,7 +75,7 @@ function write_comment(string $email, string $name, string $text, int $form_id, 
 	$CommentUUID = $SQLResult['UUID']; // doesn't work for UUID
 	
 	// For some reason $wc_website_url is null if required outside body!
-	require 'website_configuration.php';
+	global $wc_website_url;
 	$Confirmation_Link = $wc_website_url.'blog/confirm_comment.php?uuid='.$CommentUUID;
 	$mail_status = send_verification_mail($email, $Confirmation_Link, $name);
 	

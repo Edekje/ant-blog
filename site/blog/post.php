@@ -58,9 +58,9 @@ try {
 }
 catch(Throwable $t){
 	# Only for Developer use:
-	 $msg = $t->getMessage();  #$msg becomes the exception message.
+	#$msg = $t->getMessage();  #$msg becomes the exception message.
 	# For Public use:
-	#$msg = 'Post not found. View all posts <a href="posts.php">HERE</a>.';
+	$msg = 'Post not found. View all posts <a href="posts.php">HERE</a>.';
 }
 
 /* ---- IF SUCCESSFULL SET TITLE TO 'Blog-'$post['Title']+' EthanvanWoerkom.com' ELSE TO 'Blog' ---- */
@@ -71,8 +71,9 @@ if( isset($msg) ) {
 else {
 	$title = 'Blog-'.$post['Title'];
 	/* ---- SPLIT DATE & TIME -----*/
-	$SplitDate = substr($post['DateTime'], 0, 10); 
-	$SplitTime = substr($post['DateTime'], 11, 8);
+	$dt = new DateTime($Note['LastModified']);
+	$SplitDate = $dt->format('d-m-Y'); 
+	$SplitTime = $dt->format('H:i');
 }
 
 /* ---- GENERATE THE PAGE HEADER USING $title ---- */

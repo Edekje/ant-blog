@@ -1,7 +1,7 @@
 /* Special additional styling for Admin Pages */
 
 /* Prevent links from changing colour on click */
-.AdminPageLinks a, .AdminCommentViews a, .AdminComments a , .AdminReturnLink{
+.AdminPageLinks a, .AdminCommentViews a, .AdminComments a , .AdminReturnLink, .AdminPageLinks{
 	color : blue;
 }
 
@@ -10,3 +10,24 @@
 .TidyForm p     { display: table-row; }
 .TidyForm label { display: table-cell; }
 .TidyForm input { display: table-cell; }
+
+
+/* Style table in notes.php*/
+table.NotesTable {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.NotesTable th:first-child, .NotesTable td:first-child {
+  width: 80%;
+  text-align: left;
+}
+
+.NotesTable td:nth-child(2), .NotesTable th:nth-child(2) {
+  width: 20%;
+  text-align: left;
+}
+
+.NotesTable a {
+  color: blue;
+}
