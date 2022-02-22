@@ -24,7 +24,7 @@ The website engine is intended to be:
 	- Tells you whether the server is missing any files.
 
 ## Features in progress:
-- Way to safely describe SQL DB in this repo.
+- Automatically configured testing environment.
 
 ## Desired Features
 - CMS statistics page, tracking ip-adresses.
@@ -32,5 +32,4 @@ The website engine is intended to be:
 
 ##  Outstanding
 - Configuration script.
-- Duplicated testing environment.
 - Refactoring
