@@ -150,13 +150,15 @@ article p {
   text-align: justify;
 }
 
+
+/* Blogpost drop cap on first letter of first paragraph*/
+
 article > p:first-of-type::first-letter {
   float: left;
   font-size: 3em;
   margin: 0 2pt 0;
   padding: 0.1em 0 0 0;
   line-height: 0.7;
-  width: 2em;
 }
 
 .BlogBar {
