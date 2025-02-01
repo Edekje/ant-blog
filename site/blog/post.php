@@ -71,7 +71,7 @@ if( isset($msg) ) {
 else {
 	$title = 'Blog-'.$post['Title'];
 	/* ---- SPLIT DATE & TIME -----*/
-	$dt = new DateTime($Note['LastModified']);
+	$dt = new DateTime($post['DateTime']);
 	$SplitDate = $dt->format('d-m-Y'); 
 	$SplitTime = $dt->format('H:i');
 }
