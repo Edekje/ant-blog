@@ -3,7 +3,7 @@
 # every day, if the comment is older than 7 days - thereby enforcing that comments must be verified by
 # email within seven days.
 
-include '../sql_users/blogdb_user.php';
+include __DIR__.'/../sql_users/blogdb_user.php'; # __DIR__ is a relative directory import
 
 function delete_unconfirmed_comments(){
 	global $host, $dbname, $username, $password;

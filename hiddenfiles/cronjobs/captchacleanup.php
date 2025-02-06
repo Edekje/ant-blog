@@ -2,7 +2,7 @@
 # This cronjob removes captcha rows from the form_captchas table every hour,
 # if they are older than 3 hours - thereby limiting the number of active captchas.
 
-include '../sql_users/blogdb_user.php';
+include __DIR__.'/../sql_users/blogdb_user.php'; # __DIR__ is a relative directory import
 
 function delete_old_captchas(){
 	global $host, $dbname, $username, $password;
